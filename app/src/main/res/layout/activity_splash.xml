@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_background">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="@dimen/pad_70dp"
+            android:src="@drawable/splash_logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/pad_70dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pad_48dp"
+                android:layout_marginTop="@dimen/pad_20dp"
+                android:background="@drawable/white_btn_back"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textSize="@dimen/font_large"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_trial"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pad_48dp"
+                android:layout_marginTop="@dimen/pad_20dp"
+                android:background="@drawable/white_btn_back"
+                android:text="@string/trial"
+                android:textAllCaps="false"
+                android:textSize="@dimen/font_large"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.LinearLayoutCompat>
