@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Mars</string>
+
     <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -29,5 +30,13 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="err_msg_pass">Please enter your password.</string>
+    
+    <!--Home scren-->
+    <string name="profile">Profile</string>
+    <string name="work_out">Work Out</string>
+    <string name="diet_plan">Diet Plan</string>
+    <string name="membership">Membership</string>
+    <string name="bmi_calc">BMI calculator</string>
+    <string name="offers">Offers</string>
 
 </resources>

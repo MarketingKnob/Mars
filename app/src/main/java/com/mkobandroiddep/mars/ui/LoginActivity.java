@@ -1,6 +1,7 @@
 package com.mkobandroiddep.mars.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
@@ -67,6 +68,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
+        startActivity(new Intent(context,HomeActivity.class));
+        finish();
         Toast.makeText(context, "Login", Toast.LENGTH_SHORT).show();
 
     }
