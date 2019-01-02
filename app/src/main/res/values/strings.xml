@@ -1,10 +1,33 @@
 <resources>
     <string name="app_name">Mars</string>
-    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen"
-        parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+
+    <string name="ok">OK</string>
+    <string name="login_offline">Your device needs to be online in order to login. Please check your connection settings.</string>
+
+    <!--Splash-->
+    <string name="login">Login</string>
+    <string name="trial">Trial</string>
+
+    <!--Trial-->
+    <string name="name">Name</string>
+    <string name="phone">Phone No.</string>
+    <string name="email">Email</string>
+    <string name="query">Query</string>
+    <string name="submit">Submit</string>
+    <string name="error_wrong_number">You have entered a wrong mobile number.</string>
+    <string name="err_msg_email">You have entered a invalid email address.</string>
+    <string name="err_msg_username">Please enter your username.</string>
+    <string name="err_msg_query">Please enter your Query.</string>
+
+    <!--Login-->
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="err_msg_pass">Please enter your password.</string>
+
 </resources>

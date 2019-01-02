@@ -8,4 +8,25 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--Edit Text Customization inside a TextInput Layout-->
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_large</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorHighlight">@color/white</item>
+        <item name="android:textColorLink">@color/white</item>
+    </style>
+
+    <!--Custom Dialog alert-->
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/red</item>
+        <item name="android:color">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+    </style>
 </resources>
