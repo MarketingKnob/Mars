@@ -42,7 +42,8 @@
                 android:background="@drawable/white_btn_back"
                 android:text="@string/trial"
                 android:textAllCaps="false"
-                android:textSize="@dimen/font_large"/>
+                android:textSize="@dimen/font_large"
+                android:layout_marginBottom="@dimen/pad_15dp"/>
         </LinearLayout>
 
     </android.support.v7.widget.LinearLayoutCompat>

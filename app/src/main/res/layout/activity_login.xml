@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_back">
@@ -88,6 +87,7 @@
                 android:layout_marginStart="@dimen/pad_38dp"
                 android:layout_marginTop="@dimen/pad_48dp"
                 android:layout_marginEnd="@dimen/pad_38dp"
+                android:layout_marginBottom="@dimen/pad_15dp"
                 android:background="@drawable/red_btn_back"
                 android:text="@string/login"
                 android:textAllCaps="false"

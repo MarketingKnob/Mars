@@ -30,7 +30,7 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="err_msg_pass">Please enter your password.</string>
-    
+
     <!--Home scren-->
     <string name="profile">Profile</string>
     <string name="work_out">Work Out</string>
@@ -38,5 +38,11 @@
     <string name="membership">Membership</string>
     <string name="bmi_calc">BMI calculator</string>
     <string name="offers">Offers</string>
+    
+    <!--Profile Screen-->
+
+    <string name="gender">Gender</string>
+    <string name="dob">Date Of Birth</string>
+    <string name="update">Update</string>
 
 </resources>

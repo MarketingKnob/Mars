@@ -27,7 +27,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Context context;
     public String strPass ="", strUsername ="";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +76,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     /**
      * Username Validation
      */
+
     private boolean validateUsername() {
         strUsername = etName.getText().toString().trim();
 
@@ -93,6 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     /**
      * Username Validation
      */
+
     private boolean validatePassword() {
         strPass = etPassword.getText().toString().trim();
 
