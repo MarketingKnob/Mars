@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/trial_back"
+    tools:context=".ui.ProfileActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/pad_48dp"
+                android:src="@drawable/profile_screen" />
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/pad_48dp"
+                android:layout_marginTop="@dimen/pad_48dp"
+                android:layout_marginEnd="@dimen/pad_48dp"
+                android:layout_marginBottom="@dimen/pad_10dp"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pad_5dp"
+                    android:layout_marginTop="@dimen/pad_5dp"
+                    android:layout_marginBottom="@dimen/pad_10dp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/input_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="@string/name"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_xlarge" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="@color/white" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pad_5dp"
+                    android:layout_marginTop="@dimen/pad_10dp"
+                    android:layout_marginBottom="@dimen/pad_10dp"
+                    android:theme="@style/TextLabel">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/input_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="@string/phone"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_xlarge" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="@color/white" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pad_5dp"
+                    android:layout_marginTop="@dimen/pad_10dp"
+                    android:layout_marginBottom="@dimen/pad_10dp"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:text="@string/dob"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_xlarge" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:background="@color/white" />
+
+                <io.ghyeok.stickyswitch.widget.StickySwitch
+                    android:id="@+id/sticky_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/pad_100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/pad_20dp"
+                    app:ss_animationDuration="500"
+                    app:ss_animationType="curved"
+                    app:ss_iconPadding="@dimen/pad_15dp"
+                    app:ss_iconSize="@dimen/pad_30dp"
+                    app:ss_leftIcon="@drawable/user_one"
+                    app:ss_leftText="Male"
+                    app:ss_rightIcon="@drawable/user_two"
+                    app:ss_rightText="Female"
+                    app:ss_selectedTextSize="@dimen/font_large"
+                    app:ss_sliderBackgroundColor="#c96988"
+                    app:ss_switchColor="#bd3663"
+                    app:ss_textColor="@color/white"
+                    app:ss_textSize="@dimen/font_normal" />
+
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/pad_48dp"
+                    android:layout_marginStart="@dimen/pad_48dp"
+                    android:layout_marginEnd="@dimen/pad_48dp"
+                    android:layout_marginBottom="@dimen/pad_15dp"
+                    android:background="@drawable/red_btn_back"
+                    android:gravity="center"
+                    android:text="@string/update"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_xxlarge" />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+        </LinearLayout>
+
+    </ScrollView>
+</android.support.v7.widget.LinearLayoutCompat>
