@@ -163,9 +163,6 @@
                     android:layout_marginBottom="@dimen/pad_15dp"/>
 
             </android.support.v7.widget.LinearLayoutCompat>
-
         </android.support.v7.widget.LinearLayoutCompat>
     </ScrollView>
-
-
 </android.support.v7.widget.LinearLayoutCompat>

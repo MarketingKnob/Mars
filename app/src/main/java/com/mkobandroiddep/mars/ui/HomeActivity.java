@@ -19,6 +19,7 @@ import io.ghyeok.stickyswitch.widget.StickySwitch;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.ll_profile)   LinearLayout llMain;
+    @BindView(R.id.ll_bmi)       LinearLayout llBmi;
 
     Context context;
 
@@ -35,12 +36,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         context = HomeActivity.this;
         ButterKnife.bind(this);
         llMain.setOnClickListener(this);
+        llBmi.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if (v==llMain){
             startActivity(new Intent(context,ProfileActivity.class));
+        }   else if (v==llBmi){
+            startActivity(new Intent(context,BmiCalcuActivity.class));
         }
     }
 }

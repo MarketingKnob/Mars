@@ -127,7 +127,6 @@
                     app:ss_textColor="@color/white"
                     app:ss_textSize="@dimen/font_normal" />
 
-
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btn_submit"
                     android:layout_width="match_parent"
@@ -144,6 +143,5 @@
 
             </android.support.v7.widget.LinearLayoutCompat>
         </LinearLayout>
-
     </ScrollView>
 </android.support.v7.widget.LinearLayoutCompat>

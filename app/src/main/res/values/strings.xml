@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Mars</string>
 
     <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
@@ -38,11 +38,38 @@
     <string name="membership">Membership</string>
     <string name="bmi_calc">BMI calculator</string>
     <string name="offers">Offers</string>
-    
-    <!--Profile Screen-->
 
+    <!--Profile Screen-->
     <string name="gender">Gender</string>
     <string name="dob">Date Of Birth</string>
     <string name="update">Update</string>
+    
+    <!--BMI calculator screen-->
+    <string name="age">Age</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="very_severely_underweight">Very Severely Underweight</string>
+    <string name="severely_underweight">Severely Underweight</string>
+    <string name="underweight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese_class_i">Obese Class I</string>
+    <string name="obese_class_ii">Obese Class II</string>
+    <string name="obese_class_iii">Obese Class III</string>
+
+    <string-array name="weight">
+        <item>kg</item>
+        <item>lbs </item>
+    </string-array>
+
+    <string-array name="height">
+        <item>ft</item>
+        <item>cm</item>
+    </string-array>
+
+<!--Spinner-->
+    <style name="mySpinnerItemStyle" parent="Base.Widget.AppCompat.Spinner">
+        <item name="android:textColor">@color/white</item>
+    </style>
 
 </resources>
