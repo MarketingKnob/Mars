@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,30 +12,33 @@
         android:orientation="vertical"
         android:weightSum="2">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_weight="1">
 
-            <at.grabner.circleprogress.CircleProgressView
-                android:id="@+id/circleView"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                CircleProgressView:cpv_autoTextSize="true"
-                CircleProgressView:cpv_barColor="@color/colorPrimaryDark"
-                CircleProgressView:cpv_barWidth="20dp"
-                CircleProgressView:cpv_innerContourSize="0dp"
-                CircleProgressView:cpv_maxValue="100"
-                CircleProgressView:cpv_outerContourSize="0dp"
-                CircleProgressView:cpv_rimColor="@color/colorPrimary"
-                CircleProgressView:cpv_rimWidth="10dp"
-                CircleProgressView:cpv_seekMode="false"
-                CircleProgressView:cpv_textColor="@color/white"
-                CircleProgressView:cpv_unitColor="@color/white"
-                CircleProgressView:cpv_value="0"/>
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/cpb_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cpb_background_progressbar_color="#FFCDD2"
+                app:cpb_background_progressbar_width="5dp"
+                app:cpb_progressbar_color="#F44336"
+                app:cpb_progressbar_width="10dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/pad_48dp"
+                app:cpb_indeterminate_mode="false"
+                android:visibility="gone"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_bmi_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="153dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_xxxlarge"
+                android:layout_centerInParent="true"/>
 
             <!--<android.support.v7.widget.AppCompatTextView-->
                 <!--android:id="@+id/tv_result"-->
@@ -52,10 +55,11 @@
                 android:text=""
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_xxxlarge"
-                android:layout_marginTop="@dimen/pad_5dp"/>
+                android:layout_marginTop="@dimen/pad_5dp"
+                android:layout_below="@+id/tv_bmi_result"
+                android:layout_centerInParent="true"/>
 
-
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -117,6 +121,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="@dimen/pad_5dp"
+                                android:layout_marginBottom="@dimen/pad_10dp"
                                 android:layout_weight="1"
                                 android:theme="@style/TextLabel">
 
@@ -141,8 +146,8 @@
                                 android:layout_height="match_parent"
                                 android:entries="@array/weight"
                                 android:backgroundTint="@color/white"
-                                style="@style/mySpinnerItemStyle"
-                                android:popupBackground="@color/white"/>
+                                android:theme="@style/Spinner"
+                                android:popupBackground="@color/red"/>
 
                         </TableRow>
 
@@ -161,6 +166,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="@dimen/pad_5dp"
+                                android:layout_marginBottom="@dimen/pad_10dp"
                                 android:layout_weight="1"
                                 android:theme="@style/TextLabel">
 
@@ -184,7 +190,8 @@
                                 android:layout_height="match_parent"
                                 android:entries="@array/height"
                                 android:backgroundTint="@color/white"
-                                style="@style/mySpinnerItemStyle"/>
+                                android:theme="@style/Spinner"
+                                android:popupBackground="@color/red"/>
 
                         </TableRow>
 

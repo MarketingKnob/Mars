@@ -8,15 +8,10 @@ import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
 
+import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.mkobandroiddep.mars.R;
-
 import java.text.DecimalFormat;
-
-import at.grabner.circleprogress.CircleProgressView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -25,12 +20,12 @@ public class BmiCalcuActivity extends AppCompatActivity implements View.OnClickL
     @BindView(R.id.input_age)       AppCompatEditText etAge;
     @BindView(R.id.et_weight)       AppCompatEditText etWeight;
     @BindView(R.id.et_height)       AppCompatEditText etHeight;
-//    @BindView(R.id.tv_result)       AppCompatTextView tvResult;
+    @BindView(R.id.tv_bmi_result)   AppCompatTextView tvResult;
     @BindView(R.id.tv_status)       AppCompatTextView tvStatus;
     @BindView(R.id.btn_bmi)         AppCompatButton btnBmi;
     @BindView(R.id.SpinnerWeight)   AppCompatSpinner Sweight;
     @BindView(R.id.SpinnerHeight)   AppCompatSpinner Sheight;
-    @BindView(R.id.circleView)      CircleProgressView circleProgressView;
+    @BindView(R.id.cpb_main)        CircularProgressBar circularProgressBar;
 
     Context context;
 
@@ -130,8 +125,9 @@ public class BmiCalcuActivity extends AppCompatActivity implements View.OnClickL
                 DecimalFormat df = new DecimalFormat("#.##");
                 Float result=Result(weight , height);
                 displayBMI(result);
-//                tvResult.setText("Your BMI :"+df.format(Result(weight , height)).toString());
-                circleProgressView.setValue(Result(weight , height));
+                circularProgressBar.setVisibility(View.VISIBLE);
+                circularProgressBar.setProgress(result);
+                tvResult.setText(df.format(Result(weight , height)).toString());
             }
         }
     }
