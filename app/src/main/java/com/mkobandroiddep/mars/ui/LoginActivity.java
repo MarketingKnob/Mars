@@ -1,5 +1,6 @@
 package com.mkobandroiddep.mars.ui;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ import com.mkobandroiddep.mars.util.DialogUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends Activity implements View.OnClickListener {
 
     @BindView(R.id.input_username)  AppCompatEditText etName;
     @BindView(R.id.input_pass)      AppCompatEditText etPassword;

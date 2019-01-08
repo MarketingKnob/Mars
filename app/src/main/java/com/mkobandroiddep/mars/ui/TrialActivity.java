@@ -1,22 +1,33 @@
 package com.mkobandroiddep.mars.ui;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.mkobandroiddep.mars.R;
 import com.mkobandroiddep.mars.util.CommonUtil;
 import com.mkobandroiddep.mars.util.DialogUtil;
+import com.mkobandroiddep.mars.util.ProgressDialogUtil;
+import com.mkobandroiddep.mars.webservices.ApiHelper;
+import com.mkobandroiddep.mars.webservices.interfaces.ApiResponseHelper;
+import com.mkobandroiddep.mars.webservices.webresponse.TrailResponse;
+import com.valdesekamdem.library.mdtoast.MDToast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Response;
 
-public class TrialActivity extends AppCompatActivity implements View.OnClickListener {
+public class TrialActivity extends AppCompatActivity implements View.OnClickListener , ApiResponseHelper {
 
     @BindView(R.id.input_name)  AppCompatEditText etName;
     @BindView(R.id.input_phone) AppCompatEditText etPhone;
@@ -25,8 +36,10 @@ public class TrialActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.btn_submit)  AppCompatButton btnSubmit;
     @BindView(R.id.ll_main)     LinearLayoutCompat llMain;
 
-    public String strEmail ="", strUsername ="", strPhone ="",strQuery;
+    public String strEmail ="", strUsername ="", strPhone ="",strQuery="";
     Context context;
+    ProgressDialog pd;
+    private static final String TAG = "TrialActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +88,11 @@ public class TrialActivity extends AppCompatActivity implements View.OnClickList
         if (!validateEmail()) {
             return;
         }
-        Toast.makeText(context, "Submit", Toast.LENGTH_SHORT).show();
+        strQuery    = etQuery.getText().toString();
+        pd          = ProgressDialogUtil.getProgressDialogMsg(context, getResources().getString(R.string.loading_wait));
+        pd.show();
+
+        new ApiHelper().trailRegistration(strUsername,strEmail,strPhone,strQuery,TrialActivity.this);
     }
 
     /**
@@ -125,5 +142,47 @@ public class TrialActivity extends AppCompatActivity implements View.OnClickList
                 return true;
             }
     }
+
+    @Override
+    public void onSuccess(Response<JsonElement> response, String typeApi) {
+        dismissDialog();
+        if(typeApi.equalsIgnoreCase("trail_registration")) {
+            TrailResponse trailResponse = new Gson().fromJson(response.body(), TrailResponse.class);
+            Log.d(TAG, "onSuccess: "+trailResponse);
+            if(trailResponse != null) {
+                if (trailResponse.getResponseCode()==200) {
+
+                  MDToast.makeText( context, ""+trailResponse.getMessage(),MDToast.LENGTH_SHORT,
+                          MDToast.TYPE_SUCCESS).show();
+                  finish();
+                } else {
+                    MDToast.makeText( context, ""+trailResponse.getMessage(),MDToast.LENGTH_SHORT,
+                            MDToast.TYPE_WARNING).show();
+                }
+            } else {
+                DialogUtil.showDialogMsg(context, "Error", getResources().getString(R.string.error_try_again));
+            }
+        }
+
+    }
+
+    @Override
+    public void onFailure(String error) {
+        dismissDialog();
+        DialogUtil.showDialogMsg(context, "Server Error", getResources().getString(R.string.server_error_try_again));
+    }
+
+
+    private void dismissDialog() {
+        try {
+            if (pd != null) {
+                if (pd.isShowing())
+                    pd.dismiss();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

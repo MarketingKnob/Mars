@@ -42,6 +42,9 @@ dependencies {
 
     implementation 'com.mikhaellopez:circularprogressbar:2.0.0'
 
+    implementation 'com.valdesekamdem.library:md-toast:0.9.0'
+
+
     /*StickySwitch*/
     implementation 'com.github.GwonHyeok:StickySwitch:0.0.15'
     testImplementation 'junit:junit:4.12'
