@@ -39,4 +39,66 @@ public class ApiHelper {
     }
 
 
+    /*/Trail Registration/*/
+    public void traineeLogin(String username,String passwprd, final ApiResponseHelper apiResponseHelper) {
+
+        this.apiResponseHelper = apiResponseHelper;
+        Call<JsonElement> call = ApiClient.getClient().create(WebApi.class).traineeLogin(username,passwprd);
+
+        call.enqueue(new Callback<JsonElement>() {
+            @Override
+            public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
+                apiResponseHelper.onSuccess(response, "trainee_Login");
+            }
+
+            @Override
+            public void onFailure(Call<JsonElement> call, Throwable t) {
+                Log.e("trainee_Login", "//" + t.getMessage());
+                apiResponseHelper.onFailure(t.getMessage());
+            }
+        });
+    }
+
+    /*/BMI Calculator/*/
+    public void bmiCalculator(String userId,String age,String height,String weight,String bmiResult, final ApiResponseHelper apiResponseHelper) {
+
+        this.apiResponseHelper = apiResponseHelper;
+        Call<JsonElement> call = ApiClient.getClient().create(WebApi.class).bmiCalculator(userId,age,height,weight,bmiResult);
+
+        call.enqueue(new Callback<JsonElement>() {
+            @Override
+            public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
+                apiResponseHelper.onSuccess(response, "bmi_result");
+            }
+
+            @Override
+            public void onFailure(Call<JsonElement> call, Throwable t) {
+                Log.e("bmi_result", "//" + t.getMessage());
+                apiResponseHelper.onFailure(t.getMessage());
+            }
+        });
+    }
+
+
+    /*/BMI Calculator/*/
+    public void traineeProfileUpdate(String userId,String name,String gender,String dob,String phone, final ApiResponseHelper apiResponseHelper) {
+
+        this.apiResponseHelper = apiResponseHelper;
+        Call<JsonElement> call = ApiClient.getClient().create(WebApi.class).traineeUpdate(userId,name,gender,dob,phone);
+
+        call.enqueue(new Callback<JsonElement>() {
+            @Override
+            public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
+                apiResponseHelper.onSuccess(response, "trainee_profile_update");
+            }
+
+            @Override
+            public void onFailure(Call<JsonElement> call, Throwable t) {
+                Log.e("trainee_profile_update", "//" + t.getMessage());
+                apiResponseHelper.onFailure(t.getMessage());
+            }
+        });
+    }
+
+
 }

@@ -11,6 +11,7 @@
     <string name="ok">OK</string>
     <string name="login_offline">Your device needs to be online in order to login. Please check your connection settings.</string>
     <string name="loading_wait">Loading Please wait...</string>
+    <string name="login_online">Verifying credentials...</string>
     <string name="internet_error">Network error, please try again</string>
     <string name="error_try_again">Error, please try again</string>
     <string name="server_error_try_again">Server error, please try again</string>

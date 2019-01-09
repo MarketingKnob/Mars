@@ -8,6 +8,7 @@ import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 
 import com.mkobandroiddep.mars.R;
+import com.mkobandroiddep.mars.util.TinyDB;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,6 +17,8 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
 
     @BindView(R.id.btn_login)  AppCompatButton btnLogin;
     @BindView(R.id.btn_trial)  AppCompatButton btnTrial;
+    TinyDB tinyDB;
+    int traineeStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,7 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
     void init() {
 
         ButterKnife.bind(this);
-
+        tinyDB             = new TinyDB(this);
         btnTrial.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
     }
@@ -39,8 +42,20 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(new Intent(this,TrialActivity.class));
 
         }else if (v==btnLogin){
-            startActivity(new Intent(this,LoginActivity.class));
-            finish();
+
+            if (traineeStatus==1){
+                startActivity(new Intent(this,HomeActivity.class));
+                finish();
+            }else {
+                startActivity(new Intent(this,LoginActivity.class));
+
+            }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        traineeStatus    = tinyDB.getInt("TraineeStatus");
     }
 }
